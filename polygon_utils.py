@@ -25,6 +25,13 @@ def generate_interior_polygon(vertices_list, step):
     return new_vertices_list
 
 
+def generate_all_interior_polygon(polygon_list, step):
+    vertices_array = []
+    for polygon in polygon_list:
+        vertices_array.append(generate_interior_polygon(polygon, step))
+    return vertices_array
+
+
 def get_direction(vertices_list):
     direction = None
     is_convex = True
